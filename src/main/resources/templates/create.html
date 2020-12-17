@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Khoi tao thanh pho</title>
+</head>
+<body class="hold-transition sidebar-mini">
+<h3 class="card-title">Khởi tạo người dùng</h3>
+<form th:action="@{/create}" method="post" th:object="${city}">
+    <table>
+        <tr>
+            <td></td>
+            <td>Nhap thong tin</td>
+        </tr>
+        <tr>
+            <td>Ten thanh pho</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Dien tich</td>
+            <td><input type="text" th:field="*{area}"></td>
+        </tr>
+        <tr>
+            <td>Dan so</td>
+            <td><input type="text" th:field="*{population}"></td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td><input type="text" th:field="*{gdp}"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

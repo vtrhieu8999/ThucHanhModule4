@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xem</title>
+</head>
+<body>
+<a href="/">Tat ca thanh pho</a>
+<div th:object="city">
+    <h1 th:text="Thanh pho ${city.name}"></h1>
+    <br>
+    <h3 th:text="ten ${city.name}"></h3>
+    <br>
+    <h3 th:text="dien tich ${city.area}"></h3>
+    <br>
+    <h3 th:text="dan so ${city.population}"></h3>
+    <br>
+    <h3 th:text="GDP ${city.gdp}"></h3>
+    <br>
+    <h3>Mo ta</h3>
+    <br>
+    <h3 th:text="${city.description}"></h3>
+    <a th:href="@{/edit/${city.id}}">Sua</a>
+    <form th:action="@{/delete/${city.id}}" method="post">
+        <button>Xoa</button>
+    </form>
+</div>
+
+
+
+
+</body>
+</html>
