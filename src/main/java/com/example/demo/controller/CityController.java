@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.City;
+import com.example.demo.model.Nation;
+import com.example.demo.repository.INationRepository;
 import com.example.demo.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +15,14 @@ import java.util.List;
 @Controller
 public class CityController {
     @Autowired
-    CityService cityService;
+    private CityService cityService;
+    @Autowired
+    private INationRepository iNationRepository;
+
+    @ModelAttribute("allNation")
+    public Iterable<Nation> getAllNation(){
+        return iNationRepository.findAll();
+    }
 
     @GetMapping("/")
     public ModelAndView list(){

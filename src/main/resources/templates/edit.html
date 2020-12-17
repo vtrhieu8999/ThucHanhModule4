@@ -2,9 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sua thong tin thanh pho</title>
 </head>
 <body>
-
+<h3>Sua thong tin thanh pho</h3>
+<form th:action="@{/create}" method="post" th:object="${city}">
+    <table>
+        <tr>
+            <td></td>
+            <td>Nhap thong tin</td>
+        </tr>
+        <tr>
+            <td>Ten thanh pho</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Dien tich</td>
+            <td><input type="text" th:field="*{area}"></td>
+        </tr>
+        <tr>
+            <td>Dan so</td>
+            <td><input type="text" th:field="*{population}"></td>
+        </tr>
+        <tr>
+            <td>GDP</td>
+            <td><input type="text" th:field="*{gdp}"></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><select th:field="*{nation}">
+                <option selected value="">Select country</option>
+                <option th:each="nation : ${allNation}" th:value="${nation.id}"
+                        th:text="${nation.name}"></option>
+            </select></td>
+        </tr>
+        <input type="submit" value="Create">
+    </table>
+</form>
 </body>
 </html>

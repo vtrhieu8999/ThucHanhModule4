@@ -28,6 +28,15 @@
             <td>GDP</td>
             <td><input type="text" th:field="*{gdp}"></td>
         </tr>
+        <tr>
+            <td>Country</td>
+            <td><select th:field="*{nation}">
+                <option selected value="">Select country</option>
+                <option th:each="nation : ${allNation}" th:value="${nation.id}"
+                        th:text="${nation.name}"></option>
+            </select></td>
+        </tr>
+        <input type="submit" value="Create">
     </table>
 </form>
 </body>

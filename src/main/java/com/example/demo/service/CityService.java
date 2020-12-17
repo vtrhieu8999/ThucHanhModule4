@@ -10,26 +10,26 @@ import java.util.Optional;
 @Service
 public class CityService implements GeneralService<City> {
     @Autowired
-    ICityRepository cityRepository;
+    private ICityRepository iCityRepository;
 
     @Override
     public Iterable<City> findAll(){
-        return cityRepository.findAll();
+        return iCityRepository.findAll();
     }
 
     @Override
     public City save(City city){
-        return  cityRepository.save(city);
+        return  iCityRepository.save(city);
     }
 
     @Override
     public Optional<City> findById(Long id){
-        return cityRepository.findById(id);
+        return iCityRepository.findById(id);
     }
 
     @Override
     public void remove(Long id){
-        cityRepository.deleteById(id);
+        iCityRepository.deleteById(id);
     }
 
 }
